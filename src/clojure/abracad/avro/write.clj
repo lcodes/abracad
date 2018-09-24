@@ -266,3 +266,5 @@ record serialization."
   (when (not= (.getFixedSize schema) (count-bytes datum))
     (throw (AvroTypeException. (str "Not a" schema ": " datum))))
   (emit-fixed datum out))
+
+(defmulti write-logical (fn [logical-type schema value] logical-type))

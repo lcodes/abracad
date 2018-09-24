@@ -112,3 +112,5 @@ schema name symbol `rname`."
                 (distinct)
                 (sort))]
   (require ns))
+
+(defmulti read-logical (fn [logical-type schema datum] logical-type))
